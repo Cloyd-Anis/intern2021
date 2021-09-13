@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Validation from "./Validation";
+import { Button, Stack, Heading } from "@chakra-ui/react";
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -27,44 +28,54 @@ const Login = () => {
 
   return (
     <div>
-      <div>
-        <h1 style={{ color: "black", fontSize: 30 }}> Login</h1>
-      </div>
-      <form>
-        <div>
-          <label for="email">Email Address</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address..."
-            value={user.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label for="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password..."
-            value={user.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <button type="submit" className="btn" onClick={handleFormSubmit}>
-            Login
-          </button>
-          <a href="*">
-            <button>Register</button>
-          </a>
-        </div>
-        <div>
-          <a href="*">Forgot Password</a>
-        </div>
-      </form>
+      <Stack spacing={5} direction="row" align="center">
+        <Heading ml="20" size="md" fontweight="semibold" color="black">
+          Login Page
+        </Heading>
+        <form>
+          <div>
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address..."
+              value={user.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password..."
+              value={user.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <Button
+              colorScheme="teal"
+              size="lg"
+              type="submit"
+              className="btn"
+              onClick={handleFormSubmit}
+            >
+              Login
+            </Button>
+            <a href="*">
+              <Button colorScheme="teal" size="lg">
+                Register
+              </Button>
+            </a>
+          </div>
+          <div>
+            <a href="*">Forgot Password</a>
+          </div>
+        </form>
+      </Stack>
     </div>
   );
 };
