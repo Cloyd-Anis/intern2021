@@ -41,3 +41,11 @@ h1 {
   color: black;
   font-size: 50px;
 }
+
+.container {
+  text-align: center;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 40px;
+}

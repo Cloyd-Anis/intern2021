@@ -9,7 +9,7 @@ function LoginForm({ Login, error }) {
     Login(details);
   };
   return (
-    <form onSubmit={submitHandler}>
+    <form>
       <div className="form-inner">
         <h2>Login</h2>
         <div>
