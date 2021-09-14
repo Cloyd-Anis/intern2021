@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
-
+import { Box,
+    Heading,
+    Center, 
+    Input,
+    Button,
+    Link,
+    FormControl,
+    FormLabel,
+    FormErrorMessage,
+    FormHelperText, } from "@chakra-ui/react"
 class Form extends Component {
     constructor(props) {
         super(props)
@@ -28,26 +37,30 @@ class Form extends Component {
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div>
-                    <label>Email</label>
-                    <input type="email" value={this.state.email} 
-                    onChange={this.handleEmailChange} 
-                    />
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input type="password" value ={this.state.password}
-                    onChange={this.handlePasswordChange} 
-                    />
-                </div>
-                <div>
-                    <a href="#">Login</a>
-                </div>
-                <div>
-                    <input type="submit" value="Submit" />
-                </div>
-            </form>
+            <Box textAlign="center" position="absolute" bgGradient="linear(to-b, blue.200, yellow.500)" w="100%" h="100vh">
+                 <Box bg="white" border="1px" borderColor="gold" mt="9%" pr="6%" pl="6%"  ml="25%" w="50%" h="40%">
+                     <Heading size="lg" fontSize="30px">Registration Form</Heading>
+                    <FormControl id="email" onSubmit={this.handleSubmit} isRequired>
+                           <Center><FormLabel>Email</FormLabel></Center>
+                            <Input  variant="flushed" type="email" value={this.state.email} 
+                            onChange={this.handleEmailChange} 
+                            />
+                            <FormHelperText>We'll never share your email.</FormHelperText>
+                            <Center><FormLabel>Password</FormLabel></Center>
+                            <Input variant="flushed" type="password" value ={this.state.password}
+                            onChange={this.handlePasswordChange} 
+                            />
+                        <div>
+                            <Link href="*" color="blue">Login</Link>
+                        </div>
+                        <div>
+                            <Button colorScheme="teal" size="md">
+                                Submit
+                            </Button>
+                        </div>
+                    </FormControl>
+                 </Box>
+            </Box>
            
         )
     }
