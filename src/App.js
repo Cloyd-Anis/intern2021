@@ -1,21 +1,16 @@
-import { Flex, Heading } from "@chakra-ui/layout";
-import "./App.css";
-import Login from "./components/Login";
+// import { Flex, Heading } from "@chakra-ui/layout";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Login from "./Pages/Login";
+import Sample from "./Pages/Sample";
 
 function App() {
   return (
-    <Flex w="100%">
-      {/* <Heading
-          ml="20"
-          size="md"
-          fontweight="semibold"
-          color="black"
-          textAlign="center"
-        >
-          Arnan
-        </Heading> */}
-      <Login />
-    </Flex>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/login" component={Login} />
+        <Route path="/sample" component={Sample} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
